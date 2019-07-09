@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>ToDo App</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.6/css/all.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="upper">
+        <h1>Things To Do <strong>Today</strong></h1>
+        <div id="date"></div>
+      </div>
+      <div class="lower">
+        <input type="text" id="filtered-todos" placeholder="Find a task..." />
+
+        <label>
+          <input id="hide" type="checkbox" /><span>Show only uncompleted</span>
+        </label>
+        <div id="todos"></div>
+      </div>
+      <footer>
+        <form id="todo-form">
+          <input type="text" placeholder="New task" name="newTodo" />
+
+          <button class="addBtn">+</button>
+        </form>
+      </footer>
+    </div>
+    <!-- Uuidv4 - generate unique ID for each todo-->
+    <script src="uuidv4.js"></script>
+    <script src="todo-functions.js"></script>
+    <script src="todo-app.js"></script>
+  </body>
+</html>
