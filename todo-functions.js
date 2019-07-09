@@ -1,11 +1,3 @@
-// 1. Add event handler to checkbox
-// 2. Modify the correct objects completed property
-// toggleTodo function (id)
-// 3 Save and rerender
-
-// Fetch existing todos from localStorage
-// getSavedTodos
-
 const getDate = function() {
   let today = new Date();
 
@@ -51,7 +43,6 @@ const removeTodo = function(id) {
 };
 
 // Toggle todo
-
 const toggleTodo = function(id) {
   const todo = todos.find(function(todo) {
     return todo.id === id;
@@ -62,7 +53,7 @@ const toggleTodo = function(id) {
   }
 };
 
-// Render application todos based on filters
+// Render tasks based on filters
 const renderTodos = function(todos, filters) {
   let filteredTodos = todos.filter(function(todo) {
     const searchTextMatch = todo.text
@@ -72,15 +63,6 @@ const renderTodos = function(todos, filters) {
 
     return searchTextMatch && hideCompletedMatch;
   });
-
-  // filteredTodos = filteredTodos.filter(function(todo) {
-  //   return !filters.hideCompleted || !todo.complete;
-  //   // if (filters.hideCompleted) {
-  //   //   return !todo.complete;
-  //   // } else {
-  //   //   return true;
-  //   // }
-  // });
 
   const incomplete = filteredTodos.filter(function(todo) {
     return !todo.complete;
@@ -95,8 +77,6 @@ const renderTodos = function(todos, filters) {
   });
 };
 
-// Get the DOM elements for an individual note
-
 const generateTodoDOM = function(todo) {
   const todoEl = document.createElement("div");
   const check = document.createElement("input");
@@ -104,9 +84,7 @@ const generateTodoDOM = function(todo) {
   const textEl = document.createElement("span");
   const remove = document.createElement("button");
 
-  // Setup todo checkbox
-  check.type = "checkbox"; // or check.setAttribute("type", "checkbox");
-  // check.appendChild(label);
+  check.type = "checkbox";
   check.appendChild(label);
   todoEl.appendChild(check);
   check.checked = todo.complete;
@@ -121,11 +99,6 @@ const generateTodoDOM = function(todo) {
     renderTodos(todos, filters);
   });
 
-  // if(todo.complete === true) {
-  //   check.checked = true;
-  // }
-
-  // Setup the todo text
   if (todo.text.length > 0) {
     textEl.textContent = todo.text;
   } else {
@@ -134,7 +107,6 @@ const generateTodoDOM = function(todo) {
 
   todoEl.appendChild(textEl);
 
-  // Setup the remove button
   remove.textContent = "x";
   todoEl.appendChild(remove);
 
@@ -147,7 +119,6 @@ const generateTodoDOM = function(todo) {
   return todoEl;
 };
 
-// Get the DOM elements for list summary
 const generateSummaryDOM = function(incomplete) {
   const summary = document.createElement("h3");
   summary.textContent = `You have ${incomplete.length} todos left.`;

@@ -8,22 +8,6 @@ const filters = {
 
 renderTodos(todos, filters);
 
-// todos.forEach(function(todo) {
-//   const p = document.createElement("p");
-//   p.textContent = todo.text;
-//   document.querySelector("#todos").appendChild(p);
-// });
-
-// // Listen for new todo creation
-// document.querySelector("#add").addEventListener("click", function() {
-//   console.log("Add a new");
-// });
-
-// Listen for todo text change
-// document.querySelector("#new-todo").addEventListener("input", function(e) {
-//   console.log(e.target.value);
-// });
-
 document
   .querySelector("#filtered-todos")
   .addEventListener("input", function(e) {
