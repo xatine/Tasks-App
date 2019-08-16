@@ -12,7 +12,7 @@ document
   .querySelector("#filtered-todos")
   .addEventListener("input", function(e) {
     filters.searchText = e.target.value;
-    renderTodos(todos, filters); //call it again tp rerender it with the data as filters changed
+    renderTodos(todos, filters); 
   });
 
 document.querySelector("#todo-form").addEventListener("submit", function(e) {
